@@ -1,5 +1,11 @@
 #!/bin/bash
 
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# !!! CHANGE THE CONTENT OF FOLDERS_TO_KEEP VARIABLE !!!
+# Please change the list of folder names to keep in your project.
+# Note that all files in the root folder will not be removed.
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 FOLDERS_TO_KEEP="DEFAULT_FOLDER_1,DEFAULT_FOLDER_2,DEFAULT_FOLDER_3,DEFAULT_FOLDER_4"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
