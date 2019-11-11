@@ -73,9 +73,9 @@ function check_clean_state() {
 
 function usage() {
   echo "Usage:"
-  echo "   ./sparse-checkout.sh help"
-  echo "   ./sparse-checkout.sh disable"
-  echo "   ./sparse-checkout.sh enable FOLDER_NAME_1 FOLDER_NAME_2 FOLDER_NAME_3 [FOLDER_NAME_N]"
+  echo "sparse-checkout.sh help"
+  echo "sparse-checkout.sh disable"
+  echo "sparse-checkout.sh enable FOLDER_NAME_1 FOLDER_NAME_2 FOLDER_NAME_3 [FOLDER_NAME_N]"
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
