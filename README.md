@@ -12,7 +12,7 @@ If you are working at Mac and Homebrew installed, you can use the following comm
 brew tap lemiorhan/sparse-checkout
 brew install sparse-checkout
 ```
-Do not forget to create `.sparse-checkout` file in your project's root folder and add folders you want to keep one per line.
+Do not forget to create `.sparse-checkout` file in your project's root folder and add relative paths of the folders you want to keep one per line.
 
 
 ### via Git Clone
