@@ -12,7 +12,7 @@ FOLDERS_TO_KEEP="DEFAULT_FOLDER_1,DEFAULT_FOLDER_2,DEFAULT_FOLDER_3,DEFAULT_FOLD
 # FUNCTIONS
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-function enable() {
+function apply() {
   local folder_names
   folder_names=$1
 
@@ -25,7 +25,7 @@ function enable() {
     fi
   done
 
-  echo " :> Sparse checkout will be enabled for ${folder_names}"
+  echo " :> Sparse checkout will be applied for ${folder_names}"
 
   git config core.sparsecheckout true
 
@@ -62,11 +62,11 @@ function enable() {
   echo " :> Sparse checkout completed for ${folder_names}"
 }
 
-function disable() {
+function reset() {
   echo "/*" >.git/info/sparse-checkout
   git read-tree -mu HEAD
   git config core.sparseCheckout false
-  echo " :> Sparse checkout is disabled. All folders are accessible for now."
+  echo " :> Sparse checkout is resetted. All folders are accessible for now."
 }
 
 function check_clean_state() {
@@ -79,9 +79,9 @@ function check_clean_state() {
 
 function usage() {
   echo "Usage:"
-  echo "sparse-checkout.sh help"
-  echo "sparse-checkout.sh disable"
-  echo "sparse-checkout.sh enable FOLDER_NAME_1 FOLDER_NAME_2 FOLDER_NAME_3 [FOLDER_NAME_N]"
+  echo "sparse-checkout help"
+  echo "sparse-checkout reset"
+  echo "sparse-checkout apply FOLDER_NAME_1 FOLDER_NAME_2 FOLDER_NAME_3 [FOLDER_NAME_N]"
 }
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -93,11 +93,11 @@ FOLDER_NAMES=${*:2}
 
 check_clean_state
 if [ "$OPERATION" == "enable" ]; then
-  echo " :> Sparse-checkout will be disabled before enabling"
-  disable
-  enable "$FOLDER_NAMES"
-elif [ "$OPERATION" == "disable" ]; then
-  disable
+  echo " :> Sparse-checkout will be resetted before enabling"
+  reset
+  apply "$FOLDER_NAMES"
+elif [ "$OPERATION" == "reset" ]; then
+  reset
 elif [ "$OPERATION" == "help" ]; then
   usage
 else
