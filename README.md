@@ -1,4 +1,4 @@
-# EASY SPARSE CHECKOUT FUNCTIONALTY 
+# EASY SPARSE CHECKOUT  
 
 If you are working with mono repos and if you are not at the beginning of your product, you may need to deal with huge number of files in your IDE. Opening that number of files might cause high memory usage, long indexing time and a lot of wait times while working at your IDE.
 
