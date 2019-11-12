@@ -6,6 +6,16 @@ If you are working with mono repos and if you are not at the beginning of your p
 
 ## Installation
 
+### via Homebrew
+If you are working at Mac and Homebrew installed, you can use the following commands to install.
+```
+brew tap lemiorhan/sparse-checkout
+brew install sparse-checkout
+```
+Do not forget to create `.sparse-checkout` file in your project's root folder and add folders you want to keep one per line.
+
+
+### via Git Clone
 1. Clone the project to a folder you desire. 
 2. Be sure that you have execution rights of the script. If you cannot execute it, assign permission by `chmod sparse-checkout 750` command.
 3. Open/create `.sparse-checkout` file in your project's root folder and add each folder to keep by default line by line.
