@@ -92,7 +92,7 @@ OPERATION=$1
 FOLDER_NAMES=${*:2}
 
 check_clean_state
-if [ "$OPERATION" == "enable" ]; then
+if [ "$OPERATION" == "apply" ]; then
   echo " :> Sparse-checkout will be resetted before enabling"
   reset
   apply "$FOLDER_NAMES"
