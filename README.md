@@ -7,8 +7,9 @@ If you are working with mono repos and if you are not at the beginning of your p
 ## Installation
 
 1. Clone the project to a folder you desire. 
-2. Open `sparse-checkout` script and add the folders you need to keep to `FOLDERS_TO_KEEP` variable.
-3. Be sure that you have execution rights of the script. If you cannot execute it, assign permission by `chmod sparse-checkout 750` command.
+2. Be sure that you have execution rights of the script. If you cannot execute it, assign permission by `chmod sparse-checkout 750` command.
+3. Open/create `.sparse-checkout` file in your project's root folder and add each folder to keep by default line by line.
+4. Copy the script to `/usr/local/bin` folder in order to access directly 
 
 ## CLI Options
 
