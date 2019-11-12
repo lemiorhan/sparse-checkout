@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-# !!! CHANGE THE CONTENT OF FOLDERS_TO_KEEP VARIABLE !!!
-# Please change the list of folder names to keep in your project.
-# Note that all files in the root folder will not be removed.
-#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-FOLDERS_TO_KEEP="DEFAULT_FOLDER_1,DEFAULT_FOLDER_2,DEFAULT_FOLDER_3,DEFAULT_FOLDER_4"
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # FUNCTIONS
@@ -20,10 +13,20 @@ function apply() {
 
   for folder_name in "${folder_names_arr[@]}"; do
     if [ ! -d "$folder_name" ]; then
-      echo " :> Invalid parameter ($folder_name). Use a valid folder name instead."
+      echo " :> [ERROR] Invalid parameter ($folder_name). Use a valid folder name instead."
       exit 2
     fi
   done
+
+  pwd=$(pwd)
+
+  if [ ! -f "${pwd}/.sparse-checkout" ]; then
+    echo " :> [ERROR] .sparse-checkout file does not exist in project's root folder."
+    exit 3
+  fi
+
+  IFS=$'\n' read -d '' -r -a keep_folders_arr < "${pwd}/.sparse-checkout"
+
 
   echo " :> Sparse checkout will be applied for ${folder_names}"
 
@@ -31,7 +34,6 @@ function apply() {
 
   echo "/*" >.git/info/sparse-checkout
 
-  IFS=', ' read -r -a keep_folders_arr <<<"${FOLDERS_TO_KEEP}"
   pipe_delimited_keep_folders=$(
     IFS=$'|'
     echo "${keep_folders_arr[*]}"
@@ -71,9 +73,9 @@ function reset() {
 
 function check_clean_state() {
   output=$(git status --porcelain)
-  if [[ ! -z ${output} ]]; then
-    echo "Uncommitted changes exist. Terminating."
-    exit 3
+  if [[ -n ${output} ]]; then
+    echo " :> [ERROR] Uncommitted changes exist. Terminating."
+    exit 4
   fi
 }
 
