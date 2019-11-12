@@ -20,7 +20,7 @@ After succesfull installation, you can display the options as follows.
 ```
 sparse-checkout apply FOLDER_NAME_1 FOLDER_NAME_2 FOLDER_NAME_3 [FOLDER_NAME_N]
 ```
-You can add any number of folder names you need to keep. Please note that the list of folder names assigned to `FOLDERS_TO_KEEP` variable are the ones which will be kept by default. By giving a folder name as the parameter, you will be able to keep dynamically, as you wish.
+You can add any number of folder names you need to keep. Please note that the list of folder names at `.sparse-checkout` folder are the ones which will be kept by default. By giving a folder name as the parameter, you will be able to keep dynamically, as you wish.
 
 Please also note that the files in the root folder are kept too. When you apply sparse checkout, you won't lose unkept folders. They are still kept by git inside .git folder as compressed objects. You only don't see them at working copy as source code. `git status` does not mention any deletion, don't worry. You will still have access to all commits. You can still use all git commands safely.
 
