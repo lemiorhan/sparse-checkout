@@ -41,3 +41,11 @@ git read-tree -mu HEAD
 Folders to keep and remove should be put into `.git/info/sparse-checkout` file. Therefore we add `/*` as the first line to keep files in the root folder and add each folder to be removed one by one by putting exclamation mark to the begining of each line. `git read-tree` makes the magic.
 
 The script resets sparse-checkout before applies it. Normally when you call the script to keep FOLDER_A when sparse checkout has already been applied before for FOLDER_B, the script fails. Resetting before applying makes it safer.
+
+## Contribute
+
+Any contributions will be welcomed!
+
+## License
+
+This project licensed under MIT.
