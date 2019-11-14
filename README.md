@@ -74,4 +74,4 @@ Please check our [code of conduct](CODE_OF_CONDUCT.md) page for efficient collab
 
 ## License
 
-This project licensed under MIT.
+This project licensed under [MIT](LICENSE).
