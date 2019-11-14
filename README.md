@@ -57,6 +57,10 @@ The script resets sparse-checkout before applies it. Normally when you call the 
 
 Any contributions will be welcomed! Please check our [contributing](CONTRIBUTING.md) page about details
 
+## Code of Conduct
+
+Please check our [code of conduct](CODE_OF_CONDUCT.md) page for efficient collaboration and communication.
+
 ## License
 
 This project licensed under MIT.
