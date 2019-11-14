@@ -55,7 +55,7 @@ The script resets sparse-checkout before applies it. Normally when you call the 
 
 ## Contribute
 
-Any contributions will be welcomed!
+Any contributions will be welcomed! Please check our [contributing](CONTRIBUTING.md) page about details
 
 ## License
 
