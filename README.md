@@ -1,5 +1,16 @@
 # EASY SPARSE CHECKOUT  
 
+- [Installation](#installation)
+  * [via Homebrew](#via-homebrew)
+  * [via Git Clone](#via-git-clone)
+- [CLI Options](#cli-options)
+  * [Applying](#applying)
+  * [Resetting](#resetting)
+- [How It Works](#how-it-works)  
+- [Contribute](#contribute)  
+- [Code of Conduct](#code-of-conduct)  
+- [License](#license)  
+    
 If you are working with mono repos and if you are not at the beginning of your product, you may need to deal with huge number of files in your IDE. Opening that number of files might cause high memory usage, long indexing time and a lot of wait times while working at your IDE.
 
 [Sparse checkout](https://git-scm.com/docs/git-read-tree) simply help you work on the folders you really need to work on and dismiss all the others. It simply makes huge mono repos managable by your IDE.
