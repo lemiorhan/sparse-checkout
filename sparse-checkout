@@ -68,6 +68,7 @@ function reset() {
   echo "/*" >.git/info/sparse-checkout
   git read-tree -mu HEAD
   git config core.sparseCheckout false
+  git reset --hard HEAD
   echo " :> Sparse checkout is resetted. All folders are accessible for now."
 }
 
